@@ -20,9 +20,10 @@ The initial project steps involved understanding the data and cleaning it. Dupli
 The dataset's datetime columns were converted to proper datetime format. Various features were engineered to allow for more efficient data analysis and visualization; these include Time Duration (mins), Month, Day, Hour.
 
 **Exploratory Data Analysis:** 
-The cleaned data was utilized in multiple visualizations to best bolster analysis. The insights are as follows.
+The cleaned data was utilized in multiple visualizations to best bolster analysis. The resulting visualizations and insights are as follows.
 
 ## **Results and Insights**
+![](images/Contingency.png)
 
 ## **License**
 
