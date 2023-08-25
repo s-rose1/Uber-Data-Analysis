@@ -4,7 +4,7 @@
 In this analysis, I explored Uber ride data for the year 2016 within the United States. This data was obtained from Kaggle and contains ride information, including ride locations, duration, categories, distances, purpose and more. This project aimed to utilize analytical techniques and multiple Python packages to better elucidate Uber ride trends. The data underwent cleaning and preparation before exploration.
 
 
-## **Technologies and Pacakges Used**
+## **Technologies and Packages Used**
 + Python
 + Pandas
 + Numpy
