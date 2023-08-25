@@ -5,12 +5,12 @@ In this analysis, I explored Uber ride data for the year 2016 within the United 
 
 
 ## **Technologies and Pacakges Used**
-+Python
-+Pandas
-+Numpy
-+Matplotlib
-+Seaborn
-+Google Colab
++ Python
++ Pandas
++ Numpy
++ Matplotlib
++ Seaborn
++ Google Colab
 
 ## **Code Structure:**
 ### **Data Preparation:** 
