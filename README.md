@@ -25,7 +25,7 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 ## **Results and Insights**
 ![](images/Time-Analysis.png)
 ![](images/Hour-Analysis.png)
-![](images/Avg-Miles.png)
+![](images/3.png)
 ![](images/Miles-Boxplot.png)
 ![](images/Miles-Purpose-Analysis.png)
 ![](images/Duration-Boxplot.png)
