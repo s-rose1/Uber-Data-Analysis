@@ -23,8 +23,14 @@ The dataset's datetime columns were converted to proper datetime format. Various
 The cleaned data was utilized in multiple visualizations to best bolster analysis. The resulting visualizations and insights are as follows.
 
 ## **Results and Insights**
-
 ![](images/Contingency.png)
+![](images/Duration-Boxplot.png)
+![](images/Hour-Analysis.png)
+![](images/Miles-Analysis.png)
+![](images/Miles-Boxplot.png)
+![](images/Miles-Purpose-Analysis.png)
+![](images/Time-Analysis.png)
+
 
 ## **License**
 
