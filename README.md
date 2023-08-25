@@ -14,7 +14,7 @@ In this analysis, I explored Uber ride data for the year 2016 within the United 
 
 ## **Code Structure**
 **Data Preparation:** 
-The initial project steps involved understanding the data and cleaning it. Duplicates were removed, missing and inconsistent values were addressed, and colunns were renamed for clarity.
+The initial project steps involved understanding the data and cleaning it. Duplicates were removed, missing and inconsistent values were addressed, and columns were renamed for clarity.
 
 **Data Transformation and Feature Engineering:** 
 The dataset's datetime columns were converted to proper datetime format. Various features were engineered to allow for more efficient data analysis and visualization; these include Time Duration (mins), Month, Day, Hour.
@@ -23,6 +23,7 @@ The dataset's datetime columns were converted to proper datetime format. Various
 The cleaned data was utilized in multiple visualizations to best bolster analysis. The resulting visualizations and insights are as follows.
 
 ## **Results and Insights**
+
 ![](images/Contingency.png)
 
 ## **License**
