@@ -25,3 +25,4 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 ## **Results and Insights**
 
 ## **License**
+This project is licensed under the terms of the MIT License. [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
