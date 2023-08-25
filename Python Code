@@ -1,0 +1,231 @@
+import pandas as pd
+import calendar
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+import numpy as np
+import seaborn as sns
+
+path = '/content/UberDataset.csv'
+df_uber = pd.read_csv(path)
+
+#Understanding structure and removing Totals row
+print(df_uber.head())
+print(df_uber.tail())
+df_uber.drop(index = 1155, axis = 0, inplace = True)
+
+#Converting column types
+df_uber.dtypes
+df_uber['START_DATE'] = pd.to_datetime(df_uber['START_DATE'], infer_datetime_format = True, utc = True)
+df_uber['END_DATE'] = pd.to_datetime(df_uber['END_DATE'], infer_datetime_format = True, utc = True)
+df_uber['CATEGORY'] = df_uber['CATEGORY'].astype('category')
+df_uber.dtypes
+
+
+#Renaming columns
+df_uber.rename(columns={'START':'START_POINT','STOP': 'STOP_POINT'}, inplace = True)
+
+#Using function to drop duplicates
+def duplicateVal(df_uber):
+  before_drop = df_uber.shape
+  print(f'The shape before dropping duplicates: {before_drop}')
+
+  total_duplicate = df_uber.duplicated().sum()
+  print(f'Total duplicated records: {total_duplicate}')
+
+  df_uber = df_uber.drop_duplicates()
+
+  after_drop = df_uber.shape
+  print(f'Shape after dropping duplicates: {after_drop}')
+
+  return df_uber
+
+df_uber = duplicateVal(df_uber)
+
+#Checking for missing values
+print(df_uber.isnull().sum())
+df_uber['PURPOSE'].value_counts()
+
+
+#Investigating PURPOSE and linked CATEGORY column
+df_uber[['CATEGORY', 'PURPOSE']].value_counts().sort_index(level=0, ascending=True)
+
+#Investigating locations for inconsistencies
+for i in df_uber['START_POINT'].value_counts().sort_index().index:
+  print(i)
+
+df_uber['START_POINT'].replace({
+  'Kar?chi': 'Karachi',
+  'Katunayaka': 'Katunayake',
+  'Pontchartrain Shores': 'Pontchartrain Beach',
+  'R?walpindi': 'Rawalpindi',
+  'SOMISSPO': 'Somisspo'
+}, inplace = True)
+
+#Investigating STOP locations for inconsistencies
+for i in df_uber['STOP_POINT'].value_counts().sort_index().index:
+  print(i)
+
+df_uber['STOP_POINT'].replace({
+  'Kar?chi': 'Karachi',
+  'Katunayaka': 'Katunayake',
+  'Pontchartrain Shores': 'Pontchartrain Beach',
+  'R?walpindi': 'Rawalpindi',
+  'SOMISSPO': 'Somisspo'
+}, inplace = True)
+
+#Feature Engineering
+df_uber['Time_Duration_minutes'] = (df_uber['END_DATE'] - df_uber['START_DATE']).dt.total_seconds() / 60
+
+df_uber['Month'] = df_uber['START_DATE'].dt.month
+df_uber['Month'] = df_uber['Month'].apply(lambda x: calendar.month_name[x])
+
+df_uber['Day'] = df_uber['START_DATE'].apply(lambda i : i.weekday())
+day_label = {0: 'Mon', 1: 'Tues', 2: 'Wed', 3: 'Thus', 4: 'Fri', 5: 'Sat', 6: 'Sun'}
+df_uber['Day'] = df_uber['Day'].map(day_label)
+
+df_uber['Hour'] = df_uber['START_DATE'].apply(lambda x: x.strftime('%H'))
+
+#Cleaning column names
+df_uber.rename(columns = {
+  'START_DATE': 'Start Date/Time',
+  'END_DATE': 'End Date/Time',
+  'CATEGORY': 'Category',
+  'START_POINT': 'Start Location',
+  'STOP_POINT': 'Stop Location',
+  'MILES': 'Miles',
+  'PURPOSE': 'Purpose',
+  'Time_Duration_minutes': 'Trip Duration (mins)'
+},inplace = True)
+
+print(df_uber.head())
+
+gs = gridspec.GridSpec(1, 2, width_ratios = [1,2])
+figsize = (10, 5)
+ride_counts_by_day = df_uber['Day'].value_counts().sort_index()
+ride_counts_by_month = df_uber['Month'].value_counts().sort_index()
+day_order = {'Sun': 'A', 'Mon': 'B', 'Tues': 'C', 'Wed': 'D', 'Thus': 'E', 'Fri': 'F', 'Sat': 'G'}
+month_order = ['January', 'February', 'March', 'April', 'May', 'June',
+               'July', 'August', 'September', 'October', 'November', 'December']
+monthly_trend = df_uber.copy()
+monthly_trend = monthly_trend.groupby(['Month']).size()
+plt.figure(figsize = figsize)
+
+colors = '#167288', '#8cdaec', '#d48c84', '#3cb464', '#9bddb1', '#643c6a', '#836394'
+sorted_days = sorted(ride_counts_by_day.index, key = lambda x: day_order[x])
+plt.subplot(gs[0])
+plt.bar(sorted_days, ride_counts_by_day[sorted_days], color= colors)
+
+plt.xlabel('Day of the Week')
+plt.ylabel('Number of Rides')
+plt.title('Ride Counts by Day of the Week')
+
+plt.xticks(rotation=45, ha='right')
+plt.subplot(gs[1])
+sns.lineplot(
+    x = monthly_trend.loc[month_order].index,
+    y = monthly_trend.loc[month_order].values,
+    marker = '.',
+    markersize = 15
+)
+plt.title('Order Trend by Month')
+plt.xlabel('Month')
+plt.ylabel('Total Orders')
+plt.xticks(rotation=45, ha='right')
+
+
+
+plt.show()
+
+
+hourly_data = df_uber.copy()
+hourly_data_count = hourly_data.groupby(['Hour']).size().reset_index(name = 'Count')
+new_row = pd.DataFrame({'Hour':['04'], 'Count': [0]})
+hourly_data_count = pd.concat([hourly_data_count.iloc[:4], new_row, hourly_data_count.iloc[4:]]).reset_index(drop=True)
+sns.lineplot(
+    data = hourly_data_count,
+    x = 'Hour',
+    y = 'Count',
+    marker = '.',
+    markersize = 15,
+    clip_on = False
+)
+
+plt.title('Order Trend by Hour')
+plt.ylabel('Total Orders')
+plt.xlabel('Hour')
+plt.ylim(bottom = 0)
+plt.xlim(left = 0, right = hourly_data_count.shape[0] - 1)
+plt.show()
+
+gs = gridspec.GridSpec(1, 2, width_ratios = [1,3])
+figsize = (10, 5)
+colors = ['#167288']
+plt.figure(figsize = figsize)
+average_miles_by_cat = df_uber.groupby('Category')['Miles'].mean()
+avg_miles_by_purpose = df_uber.groupby('Purpose')['Miles'].mean()
+
+plt.subplot(gs[0])
+plt.bar(average_miles_by_cat.index, average_miles_by_cat.values, color = colors)
+plt.xlabel('Category')
+plt.ylabel('Average Miles')
+plt.title('Average Miles per Category')
+
+plt.subplot(gs[1])
+colors = ['#167288', '#8cdaec', '#b45248', '#d48c84', '#a89a49', '#d6cfa2', '#3cb464', '#9bddb1', '#643c6a', '#836394']
+plt.bar(avg_miles_by_purpose.index, avg_miles_by_purpose.values, color = colors)
+plt.xlabel('Purpose')
+plt.ylabel('Average Miles')
+plt.title('Average Miles per Purpose')
+plt.xticks(rotation=45, ha='right')
+
+plt.subplots_adjust(wspace = .5)
+plt.show()
+
+plt.figure(figsize=(15,6))
+sns.boxplot(data = df_uber, x='Miles', y='Purpose', palette = colors)
+plt.xlabel('Travel Distance')
+plt.ylabel('Purpose')
+plt.title('Travel Distance by Purpose')
+plt.show()
+
+gs = gridspec.GridSpec(1, 2, width_ratios = [1,1])
+figsize = (10, 5)
+plt.figure(figsize = figsize)
+avg_duration_by_purpose = df_uber.groupby('Purpose')['Trip Duration (mins)'].mean()
+
+plt.subplot(gs[1])
+plt.bar(avg_duration_by_purpose.index, avg_duration_by_purpose.values, color = colors)
+plt.xlabel('Purpose')
+plt.ylabel('Average Trip Duration (minutes)')
+plt.title('Average Trip Duration by Purpose')
+plt.xticks(rotation=45, ha='right')
+
+plt.subplot(gs[0])
+plt.hist(df_uber['Trip Duration (mins)'], bins=10, color='#167288', edgecolor='black')
+plt.xlabel('Trip Duration (minutes)')
+plt.ylabel('Frequency')
+plt.title('Distribution of Trip Durations')
+
+
+plt.subplots_adjust(wspace = .5)
+plt.show()
+
+plt.figure(figsize=(15,6))
+sns.boxplot(data = df_uber, x='Trip Duration (mins)', y='Purpose', palette = colors)
+plt.xlabel('Trip Duration (mins)')
+plt.ylabel('Purpose')
+plt.title('Trip Duration by Purpose')
+plt.show()
+
+
+hourly_segment_prob = df_uber.groupby(['Hour', 'Purpose']).size().div(len(df_uber)).reset_index(name = 'Probability')
+contingency_table = pd.crosstab(hourly_segment_prob['Purpose'], hourly_segment_prob['Hour'], normalize = 'columns')
+
+plt.figure(figsize = (14, 6))
+sns.heatmap(contingency_table, annot = True, cmap = 'Purples', fmt = '.2f')
+
+plt.xlabel('Hour')
+plt.ylabel('Purpose')
+plt.title('Probability of Purpose by Hour for 2016')
+
+plt.show()
