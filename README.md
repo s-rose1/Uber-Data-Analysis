@@ -24,19 +24,15 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 
 ## **Results and Insights**
 ![](images/Time-Analysis.png)
-+ dfgdfg df gd            + dfgdfgdfg
++ Wednesdays experience lowest demand for rides while Friday experiences highest.
++ Weekends show among the lowest of ride counts. Further investigation reveals that 93% of all rides are Business category, explaining lack of rides on weekend.
++ Ride demands fluctuate across the year, with peaks in the holiday season.
 ![](images/Hour-Analysis.png)
-+
++ There exists twilight hours from 1:00AM-6:00AM in which rides are in low demand.
++ 
 ![](images/3.png)
 
 + Business category rides have an average distance of about 11 miles, only 2 miles longer than Personal category trips.
-      Business: Airport/Travel        Personal:
-               Between Offices            Charity
-               Customer Visit             Commute
-               Errand/Supplies            Moving
-               Meal/Entertain
-               Meeting
-               Temporary Site
 + Rides of the Commute purpose stand out as the purpose with the highest average, with an average distance of 180 miles.
 + 
 ![](images/Miles-Boxplot.png)
@@ -48,6 +44,8 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 ![](images/Duration-Boxplot.png)
 ![](images/Contingency.png)
 
+
+## **Conclusion**
 ## **License**
 
 This project is licensed under the terms of the MIT License. 
