@@ -28,6 +28,7 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 ![](images/Hour-Analysis.png)
 +
 ![](images/3.png)
+
 + Business category rides have an average distance of about 11 miles, only 2 miles longer than Personal category trips.
       Business: Airport/Travel        Personal:
                Between Offices            Charity
@@ -37,6 +38,7 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
                Meeting
                Temporary Site
 + Rides of the Commute purpose stand out as the purpose with the highest average, with an average distance of 180 miles.
++ 
 ![](images/Miles-Boxplot.png)
 + The boxplot shows data consisting of many outliers, with Meeting and Customer Visit experiencing the most.
 + Rides of Errand/Supplies purpose have relatively low travel distance.
