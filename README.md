@@ -21,7 +21,7 @@ The dataset's datetime columns were converted to proper datetime format. Various
 
 **Exploratory Data Analysis:** 
 The cleaned data was utilized in multiple visualizations to best bolster analysis. The resulting visualizations and insights are as follows.
-<div style="text-align:center"><img src="![](images/Time-Analysis.png)" /></div>.
+<div style="text-align:center"><img src="![](/images/Time-Analysis.png)" /></div>.
 ## **Results and Insights**
 ![](images/Time-Analysis.png)
 + Wednesdays experience lowest demand for rides while Friday experiences highest.
