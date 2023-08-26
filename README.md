@@ -21,9 +21,14 @@ The dataset's datetime columns were converted to proper datetime format. Various
 
 **Exploratory Data Analysis:** 
 The cleaned data was utilized in multiple visualizations to best bolster analysis. The resulting visualizations and insights are as follows.
-<div style="text-align:center"><img src="![](/images/Time-Analysis.png)" /></div>.
+
 ## **Results and Insights**
 ![](images/Time-Analysis.png)
+
+<p align="center">
+  <img src="images/Time-Analysis.png" alt="Time Analysis">
+</p>
+
 + Wednesdays experience lowest demand for rides while Friday experiences highest.
 + Weekends show among the lowest of ride counts. Further investigation reveals that 93% of all rides are Business category, explaining lack of rides on weekend.
 + Ride demands fluctuate across the year, with peaks in the holiday season.
