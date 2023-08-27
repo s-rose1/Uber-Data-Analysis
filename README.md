@@ -24,12 +24,14 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 
 ## **Results and Insights**
 ![](images/Time-Analysis.png)
+
 + Wednesdays experience lowest demand for rides while Friday experiences highest.
 + Weekends show among the lowest of ride counts. Further investigation reveals that 93% of all rides are Business category, explaining lack of rides on weekend.
 + Ride demands fluctuate across the year, with peaks in the holiday season.
 + September experienced the lowest amount of rides at approximately 20.
   
 ![](images/Hour-Analysis.png)
+
 + There exists twilight hours from 1:00AM-6:00AM in which rides are in low demand.
 + There were exactly zero rides ordered at 4:00AM for the year of 2016.
 + There is a relatively high period for orders from 1:00PM to 6:00PM.
@@ -43,23 +45,27 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 
   
 ![](images/Miles-Boxplot.png)
+
 + The boxplot shows data consisting of many outliers, with Meeting and Customer Visit experiencing the most.
 + Rides of Errand/Supplies purpose have relatively low travel distance.
 + Rides of Meeting purpose have the largest median travel distance.
 + Rides of Customer Visit purpose have variablity considered high in relativity.
   
 ![](images/Miles-Purpose-Analysis.png)
+
 + A majority of all rides take under 50 minutes.
 + The data is right skewed, indicating many outliers in terms of trip duration.
 + By trip duration, rides of Commute purpose hold the highest average by far. The next highest average is customer visit.
 
 ![](images/Duration-Boxplot.png)
+
 + Trip duration data consists of many outliers.
 + By median, Errand/Supplies trips tend to have relatively low duration, followed by trips of Meal/Entertain purpose.
 + Commute appears as though it consists of very few data points.
 + Customer Visit has the highest variability in trip duration, ranging from 1 min to more than 300.
 
 ![](images/Contingency.png)
+
 + At 2:00AM, the possibility that the type of ride ordered is Meeting is incredibly likely according to our contingency table.
 + At 5:00AM, there is an equal probability the type of ride ordered is either for Meeting or for Meal/Entertain.
 + Rides for Meeting purpose are likely to occur throughout the day.
