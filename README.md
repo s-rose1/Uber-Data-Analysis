@@ -72,7 +72,18 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 
   
 ## **Conclusion**
-Many interesting and actionable insights were gained during this analysis. A significant portion, 93% of all Uber rides in 2016 were Business category, allowing us to better understand the customer base. In addition, elucidation of ride demand trends in time, probability of trip purpose, and trip duration statististics aid in helping Uber optimize its services and effectively allocate resources to increase business.
+Many interesting and actionable insights were gained during this analysis. 
+
+
+One significant observation is the distinct demand patterns across weekdays, with Wednesdays experiencing lower demand and Fridays witnessing peak demand. Interestingly enough, the weekends experienced lowest demand. This trend is supported by the fact that Business category rides constituted 93% of all rides. This presents an opportunity to diversify services or introduce incentives to attract non-business riders during weekends and to boost mid-week ridership.
+
+Understanding the fluctuation in ride demand throughout the year, with peaks during the holiday season, provides a chance to align driver availability and incentives with increased demand periods.
+
+The substantial average distance of Commute purpose rides highlights the potential to provide tailored services or packages for long-distance commuters.
+
+The variations in ride durations for different purposes underscore the importance of accurate ride estimations for customers, ensuring a positive user experience.
+
+In conclusion, these insights empower Uber to enhance its operational efficiency, improve customer experience, and optimize marketing strategies to meet varying customer needs and preferences. By leveraging the data-driven findings, Uber can continue to evolve its services and maintain its position as a leading ride-sharing platform.
 
 ## **License**
 This project is licensed under the terms of the MIT License. 
