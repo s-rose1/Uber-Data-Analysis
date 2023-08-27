@@ -77,7 +77,7 @@ Many interesting and actionable insights were gained during this analysis.
 
 One significant observation is the distinct demand patterns across weekdays, with Wednesdays experiencing lower demand and Fridays witnessing peak demand. Interestingly enough, the weekends experienced lowest demand. This trend is supported by the fact that Business category rides constituted 93% of all rides. This presents an opportunity to diversify services or introduce incentives to attract non-business riders during weekends and to boost mid-week ridership.
 
-Understanding the fluctuation in ride demand throughout the year, with peaks during the holiday season, provides a chance to align driver availability and incentives with increased demand periods.
+Understanding the fluctuation in ride demand throughout the year, with peaks during the holiday season, provides a chance to align driver availability and incentives with increased demand periods. Additionally, providing discounted rides during periods of low ridership - like September - can increase demand.
 
 The substantial average distance of Commute purpose rides highlights the potential to provide tailored services or packages for long-distance commuters.
 
