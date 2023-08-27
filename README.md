@@ -72,8 +72,8 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 
   
 ## **Conclusion**
-Many interesting and actionable insights were gained during this analysis. A significant portion, 93% of all Uber rides in 2016 were Business category, allowing us to better understand the customer base. In addition, both ride demand and average travel distance have shown to be fluctuating. Understanding the customer base and ride patterns can help Uber optimize its services and effectively allocate resources to increase business.
-## **License**
+Many interesting and actionable insights were gained during this analysis. A significant portion, 93% of all Uber rides in 2016 were Business category, allowing us to better understand the customer base. In addition, elucidation of ride demand trends in time, probability of trip purpose, and trip duration statististics aid in helping Uber optimize its services and effectively allocate resources to increase business.
 
+## **License**
 This project is licensed under the terms of the MIT License. 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
