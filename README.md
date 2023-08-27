@@ -14,10 +14,10 @@ In this analysis, I explored Uber ride data for the year 2016 within the United 
 
 ## **Code Structure**
 **Data Preparation:** 
-The initial project steps involved understanding the data and cleaning it. Duplicates were removed, missing and inconsistent values were addressed, and columns were renamed for clarity.
+The initial project steps involved understanding and cleaning the data. Duplicates were removed, missing and inconsistent values were addressed, and columns were renamed for clarity.
 
 **Data Transformation and Feature Engineering:** 
-The dataset's datetime columns were converted to proper datetime format. Various features were engineered to allow for more efficient data analysis and visualization; these include Time Duration (mins), Month, Day, Hour.
+The dataset's datetime columns were converted to proper datetime format. Various features were engineered to allow for more efficient data analysis and visualization; these include Time Duration (mins), Month, Day, Hour. Month, Day, and Hour were indexed to appear properly and sorted within visualizations.
 
 **Exploratory Data Analysis:** 
 The cleaned data was utilized in multiple visualizations to best bolster analysis. The resulting visualizations and insights are as follows.
@@ -27,30 +27,44 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 + Wednesdays experience lowest demand for rides while Friday experiences highest.
 + Weekends show among the lowest of ride counts. Further investigation reveals that 93% of all rides are Business category, explaining lack of rides on weekend.
 + Ride demands fluctuate across the year, with peaks in the holiday season.
-+ 
++ September experienced the lowest amount of rides at approximately 20.
+  
 ![](images/Hour-Analysis.png)
 + There exists twilight hours from 1:00AM-6:00AM in which rides are in low demand.
++ There were exactly zero rides ordered at 4:00AM for the year of 2016.
++ There is a relatively high period for orders from 1:00PM to 6:00PM.
 
-+ 
+
 ![](images/3.png)
 
 + Business category rides have an average distance of about 11 miles, only 2 miles longer than Personal category trips.
 + Rides of the Commute purpose stand out as the purpose with the highest average, with an average distance of 180 miles.
++ Errand/Supplies, Airport Travel and Moving purposes are among the lowest in miles.
 
-+ 
+  
 ![](images/Miles-Boxplot.png)
 + The boxplot shows data consisting of many outliers, with Meeting and Customer Visit experiencing the most.
 + Rides of Errand/Supplies purpose have relatively low travel distance.
 + Rides of Meeting purpose have the largest median travel distance.
 + Rides of Customer Visit purpose have variablity considered high in relativity.
-+ 
+  
 ![](images/Miles-Purpose-Analysis.png)
++ A majority of all rides take under 50 minutes.
++ The data is right skewed, indicating many outliers in terms of trip duration.
++ By trip duration, rides of Commute purpose hold the highest average by far. The next highest average is customer visit.
 
 ![](images/Duration-Boxplot.png)
++ Trip duration data consists of many outliers.
++ By median, Errand/Supplies trips tend to have relatively low duration, followed by trips of Meal/Entertain purpose.
++ Commute appears as though it consists of very few data points.
++ Customer Visit has the highest variability in trip duration, ranging from 1 min to more than 300.
 
 ![](images/Contingency.png)
++ At 2:00AM, the possibility that the type of ride ordered is Meeting is incredibly likely according to our contingency table.
++ At 5:00AM, there is an equal probability the type of ride ordered is either for Meeting or for Meal/Entertain.
++ Rides for Meeting purpose are likely to occur throughout the day.
 
-
+  
 ## **Conclusion**
 Many interesting and actionable insights were gained during this analysis. A significant portion, 93% of all Uber rides in 2016 were Business category, allowing us to better understand the customer base. In addition, both ride demand and average travel distance have shown to be fluctuating. Understanding the customer base and ride patterns can help Uber optimize its services and effectively allocate resources to increase business.
 ## **License**
