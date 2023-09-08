@@ -24,8 +24,7 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 ## **Results and Insights**
 ![](images/Time-Analysis.png)
 
-+ Wednesdays experience lowest demand for rides while Friday experiences highest.
-+ Weekends are among the lowest of ride counts. Investigation reveals that 93% of all rides are Business category, potentially explaining lack of rides on weekend.
++ Wednesdays and weekends experience lowest demand for rides while Friday experiences highest.
 + Ride demands fluctuate across the year, with peaks in the holiday season.
 + September experienced the lowest amount of rides at approximately 20.
   
