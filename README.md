@@ -1,8 +1,7 @@
 # **Uber Data Analysis: Exploring 2016 Ride Patterns in the United States**
 
 ## **Project Description**
-In this analysis, I explored Uber ride data for the year 2016 within the United States. This data was obtained from Kaggle and contains ride information of 1155 different rides, including ride locations, duration, categories, distances, purpose and more. This project aimed to utilize analytical techniques and multiple Python packages to better elucidate Uber ride trends. The data underwent cleaning and preparation before exploration.
-
+In this analysis, I explored Uber ride data for the year 2016 within the United States. This data was obtained from Kaggle and contains ride information of 1155 different rides, including ride locations, duration, categories, distances, and purpose. This project aimed to utilize analytical techniques to better elucidate Uber ride trends and produce actionable recommendations.
 
 ## **Technologies and Packages Used**
 + Python
@@ -26,13 +25,13 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 ![](images/Time-Analysis.png)
 
 + Wednesdays experience lowest demand for rides while Friday experiences highest.
-+ Weekends show among the lowest of ride counts. Further investigation reveals that 93% of all rides are Business category, explaining lack of rides on weekend.
++ Weekends are among the lowest of ride counts. Investigation reveals that 93% of all rides are Business category, potentially explaining lack of rides on weekend.
 + Ride demands fluctuate across the year, with peaks in the holiday season.
 + September experienced the lowest amount of rides at approximately 20.
   
 ![](images/Hour-Analysis.png)
 
-+ There exists twilight hours from 1:00AM-6:00AM in which rides are in low demand.
++ There exists twilight hours from 1:00AM to 6:00AM in which rides are in low demand.
 + There were exactly zero rides ordered at 4:00AM for the year of 2016.
 + There is a relatively high period for orders from 1:00PM to 6:00PM.
 
@@ -72,16 +71,15 @@ The cleaned data was utilized in multiple visualizations to best bolster analysi
 
   
 ## **Conclusion**
-Many interesting and actionable insights were gained during this analysis. 
+This analysis allowed for better understanding of Uber ride trends within the year 2016.
 
+One significant observation is the distinct demand patterns across weekdays, with Wednesdays experiencing lower demand and Fridays witnessing peak demand. In addition to Wednesdays, weekends also experienced low demand. One purported explanation is the fact that Business category rides constituted 93% of all rides, indicating that a majority of their customers are not buying rides over the weekend. This presents an opportunity to diversify services or introduce incentives to attract non-business riders during weekends and to boost mid-week ridership. 
 
-One significant observation is the distinct demand patterns across weekdays, with Wednesdays experiencing lower demand and Fridays witnessing peak demand. Interestingly enough, the weekends experienced lowest demand. This trend is supported by the fact that Business category rides constituted 93% of all rides. This presents an opportunity to diversify services or introduce incentives to attract non-business riders during weekends and to boost mid-week ridership.
+Business ridership accounting for a majority of all rides provides avenues for further investigation. It is worthwhile to explore what drives these customers to Uber and how those methods can be altered and employed in order to encourage Personal ridership to increase overall sales. Additional marketing and user data would be helpful to aid these investigations.
 
-Understanding the fluctuation in ride demand throughout the year, with peaks during the holiday season, provides a chance to align driver availability and incentives with increased demand periods. Additionally, providing discounted rides during periods of low ridership - like September - can increase demand.
+Understanding the fluctuation in ride demand throughout the year provides a chance to align driver availability and incentives with increased demand periods. Unsurprisingly, there are peaks during summer months and winter months. This user behavior is likely driven by both weather and holiday activities. Advertising a holiday deal would work to further increase the customer base during this time. Additionally, providing discounted rides during periods of low ridership - like September - can increase demand. Elucidating any correlations behind low ridership during the month of September would be useful in bolstering the corrective action.
 
-The substantial average distance of Commute purpose rides highlights the potential to provide tailored services or packages for long-distance commuters.
-
-The variations in ride durations for different purposes underscore the importance of accurate ride estimations for customers, ensuring a positive user experience.
+The substantial average distance of Commute purpose rides highlights the potential to provide tailored services or packages for long-distance commuters. The primary focus would be to increase the number of users riding for Commute purpose in the hopes of retaining those customers and their longer trips. Despite holding the longest average of trips, the Commute purpose also has the lowest amount of rides. It is possible those performing long commutes choose other options over Uber involving convenience, cost and awareness.
 
 In conclusion, these insights empower Uber to enhance its operational efficiency, improve customer experience, and optimize marketing strategies to meet varying customer needs and preferences. By leveraging the data-driven findings, Uber can continue to evolve its services and maintain its position as a leading ride-sharing platform.
 
